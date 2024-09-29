@@ -1,0 +1,639 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+/* Header Styles */
+.header {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between logo and burger icon */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Add padding for spacing */
+  background-color:#1b3b5f; /* Background color for header */
+  color: white; /* Text color */
+  gap: 1px;
+}
+/* Logo Styles */
+.logo {
+  display: flex; /* Align logo items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between image and text */
+}
+
+.logo-image {
+  width: 50px; /* Set a fixed width for the logo image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+}
+
+.logo-title {
+  font-size: 1.8em; /* Font size for the title */
+  font-weight: bold; /* Bold title */
+  color: #fff; /* White color for the text */
+  text-transform: uppercase; /* Uppercase for professional look */
+  letter-spacing: 1px; /* Space between letters */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Slight shadow for text */
+}
+
+.header .logo h1 {
+  font-size: 1.8em; /* Logo font size */
+  margin: 0;
+  font-weight: bold; /* Make the logo bold */
+  letter-spacing: 2px; /* Space between letters */
+}
+
+.burger {
+  font-size: 1.5em; /* Adjust size of burger icon */
+  cursor: pointer; /* Pointer cursor for clickability */
+  margin-left: auto; /* Push the burger icon to the right */
+}
+/* Add responsiveness if needed */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Navigation Styles */
+.nav-links {
+  display: flex;
+}
+
+.nav-links ul {
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Arrange items in a row */
+  gap: 20px; /* Space between items */
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #fff; /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1em; /* Font size */
+  transition: color 0.3s ease; /* Transition effect on hover */
+}
+
+.nav-links a:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start off-screen to the left */
+  width: 200px;
+  height: 100%;
+  background:#1b3b5f; /* Sidebar background */
+  color: #fff; /* White text */
+  transition: left 0.3s ease; /* Smooth transition */
+  z-index: 20; /* Ensure it appears above other elements */
+}
+
+.sidebar.open {
+  left: 0; /* Show sidebar */
+}
+
+.sidebar ul {
+  list-style: none; /* Remove default list styles */
+  padding: 20px; /* Padding for the sidebar */
+}
+
+.sidebar li {
+  margin: 15px 0; /* Space between items */
+}
+
+.sidebar a {
+  color: #fff; /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.2em; /* Font size */
+  transition: color 0.3s ease; /* Transition effect on hover */
+}
+
+.sidebar a:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: none; /* Hidden by default */
+  z-index: 15; /* Below sidebar */
+}
+
+.overlay.visible {
+  display: block; /* Show overlay */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .burger {
+    display: block; /* Show burger icon on small screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide navigation links on small screens */
+  }
+}
+/* Hero Styles */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; /* Adjust height as needed */
+  text-align: center;
+  color:black ;
+  font-size: bold;
+  padding: 1rem;
+  overflow:hidden; /* Ensure child elements are clipped to the parent */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background: url('./assets/favicon.ico') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center;
+  background-attachment:relative; /* Parallax effect */
+  opacity: 0.15; /* Adjust this value to control the opacity */
+  z-index: -1; /* Keep the image behind the text */
+}
+
+.hero h1, .hero p, .cta-btn {
+  position: relative; /* Ensure the text and button stay above the image */
+  z-index: 1; /* Ensure text stays above the image */
+
+}
+
+
+/* Typing effect for heading */
+.animated-heading {
+  font-size: 1.5em;
+  color:black;
+  border-right: 0.15em solid orangered;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+
+}
+
+/* Typing effect for subheading */
+.animated-subheading {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 100%; /* Full width */
+  animation: typing 10s steps(40, end) 1s infinite, blink-caret 0.85s step-end infinite;
+}
+
+/* Button Styling */
+.cta-btn {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0; /* Start hidden */
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease-in-out forwards 3s; /* Fade after typing */
+}
+
+.cta-btn:hover {
+  background-color: #ffd700;
+  transform: translateY(-5px);
+}
+/* Keyframes for typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #0c0c0c }
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* Adjust height for smaller screens */
+    background-attachment: scroll; /* Switch to scroll for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh; /* Further adjust height for very small screens */
+    padding: 0.5rem; /* Reduce padding on smaller devices */
+  }
+}
+
+
+
+
+.about {
+  background: white;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out; /* Slide-in animation */
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color:#1b3b5f;
+}
+hr {
+  border: none; /* Remove default border */
+  height: 2px; /* Set the height of the line */
+  background-color: #ffd700; /* Change color to match your theme */
+  width: 50%; /* Adjust width as needed */
+  margin: 10px auto; /* Center the line and add space above and below */
+}
+
+/* Flex container for image and text */
+.about-content {
+  display: flex;
+  flex-direction: row; /* Row on large screens */
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.about-image {
+  flex: 0 0 40%; /* Image takes up 40% of the width */
+  margin-right: 20px;
+}
+
+.about-image img {
+  width: 100%;        /* Full width of the container */
+  height: 100%;      /* Maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;  /* Ensures the image covers the area without distortion */
+}
+
+.about-text {
+  flex: 1;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Switch to column layout on small screens */
+    align-items: center; /* Center content on smaller screens */
+  }
+
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .about-text {
+    text-align: center; /* Center text on smaller screens */
+  }
+}
+
+
+/* Skills Styles */
+.skills {
+  background-color: #1b3b5f;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  border-top: 5px solid  #ff9900; 
+}
+
+
+
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffd700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: #2c4f75; /* Light navy blue */
+  border-radius: 10px;
+  padding: 20px;
+  font-size: bold;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+
+.role {
+  font-size: 16px;       
+  color: whitesmoke; 
+  text-decoration: none;          
+  font-weight: bold;     
+  background-color:skyblue; /* Background color */
+  padding: 10px;          /* Add padding around the text */
+  border-radius: 5px;     /* Rounded corners */
+  display: inline-block;   /* Make it inline-block to respect width and height */
+  margin: 10px 0;         /* Add margin above and below */
+  text-align: center;      /* Center align the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+/* .role:hover {
+  transform: translateY(-20px); 
+  box-shadow: 0 5px 10px orange;
+} */
+/* CertificateViewer Styles */
+/* Base styles for all screen sizes */
+.certificate-viewer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30; /* Ensure it appears above other elements */
+  border-radius: 10px;
+  width: 80%; /* Default width */
+  max-width: 800px; /* Prevent excessive width on large screens */
+  height: 50vh; /* Occupy 50% of the viewport height */
+  overflow: auto; /* Enable scrolling for longer content */
+}
+
+.certificate-viewer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.certificate-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Media queries for different screen sizes */
+
+/* For smaller screens (phones) */
+@media (max-width: 600px) {
+  .certificate-viewer {
+    width: 90%; /* Slightly smaller width */
+    height: 60vh; /* Increase height on smaller screens */
+  }
+}
+
+/* For larger screens (tablets, desktops) */
+@media (min-width: 1024px) {
+  .certificate-viewer {
+    width: 70%; /* Adjust width for larger screens */
+    height: 55vh; /* Increase height slightly for better viewability */
+  }
+}
+
+/* Projects Styles */
+.projects {
+  align-items: center;
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+  padding: 50px 20px;
+  background: url('assets/back2.webp') no-repeat center center;
+  background-size: cover; 
+  background-attachment: relative; 
+  border-top: 5px solid #f76c6c; 
+  animation: fadeIn 2s ease-in-out; 
+}
+
+.projects h2 {
+  text-align: center; /* Center the text */
+  margin-bottom: 40px; /* Space below the heading */
+  font-size: 2.5em; /* Larger font size for prominence */
+  font-weight: bold; /* Make the text bold */
+  color: #1b3b5f; /* Use your theme color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  position: relative; /* Allows for pseudo-elements */
+  padding: 10px 0; /* Add vertical padding */
+}
+
+.projects h2::after {
+  content: ""; /* Empty content for the line */
+  display: block; /* Makes it a block element */
+  width: 60%; /* Adjust the width of the line */
+  height: 4px; /* Line height */
+  background: #ffd700; /* Gold color */
+  margin: 10px auto 0; /* Center the line and add space above */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default to 1 column */
+  gap: 1.5rem; /* Increased gap for better spacing */
+}
+
+.project-item {
+  background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+.project-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #f76c6c; /* Button color */
+  color: white; /* Button text color */
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.project-link:hover {
+  background-color: #e65c5c; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+  }
+}
+
+/* Contact Styles */
+.contact {
+  padding: 2rem;
+  background: white;
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.contact button:hover {
+  background: #444; /* Darker background on hover */
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+.social-links {
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .projects-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+  }
+}
