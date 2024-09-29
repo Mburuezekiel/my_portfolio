@@ -14,9 +14,9 @@ function Header() {
           <img src={logo} alt="Ezekiel Njuguna" className="logo-image" />
           <h1 className="logo-title">Portfolio</h1>
         </div>
-        <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleSidebar}>
-          <i className="bi bi-list"></i>
-        </div>
+        // <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleSidebar}>
+        //   <i className="bi bi-list"></i>
+        // </div>
         <nav className={`nav-links ${isOpen ? 'active' : ''}`}>
           <ul>
             <li>
