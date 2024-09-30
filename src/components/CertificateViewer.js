@@ -45,7 +45,7 @@ function CertificateViewer() {
             style={{ maxWidth: '100%', height: 'auto' }}
           />
           <div className="buttons">
-            <button onClick={handleBack}>Back to Skills</button>
+            <button onClick={handleBack}>Back</button>
             <button onClick={handleNext} disabled={index >= certificates.length - 1}>Next</button>
           </div>
         </>
