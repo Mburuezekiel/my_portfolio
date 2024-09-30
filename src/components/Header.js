@@ -16,6 +16,7 @@ function Header() {
         </div>
          <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleSidebar}>
           <i className="bi bi-list"></i>
+           </div>
   
         <nav className={`nav-links ${isOpen ? 'active' : ''}`}>
           <ul>
