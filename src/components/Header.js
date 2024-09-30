@@ -15,7 +15,7 @@ function Header() {
           <h1 className="logo-title">Portfolio</h1>
         </div>
          <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleSidebar}>
-          <i className="bi bi-list"></i>
+          <i className="bi bi-list">Menu</i>
            </div>
   
         <nav className={`nav-links ${isOpen ? 'active' : ''}`}>
